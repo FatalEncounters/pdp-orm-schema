@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest an idea for this project
+about: This is a new Feature Request for this project
 title: ''
 labels: Feature Request
 assignees: manifestinteractive

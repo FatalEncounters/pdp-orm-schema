@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Create a report to help us improve
+about: I would like to Report a Bug
 title: ''
 labels: Bug Report
 assignees: manifestinteractive

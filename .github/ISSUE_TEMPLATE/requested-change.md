@@ -1,14 +1,14 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: Requested Change
+about: This is a Requested Change to the project
 title: ''
-labels: ''
-assignees: ''
+labels: Requested Change
+assignees: manifestinteractive
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**Is your requested change related to a problem? Please describe.**
+A clear and concise description of what the request is.
 
 **Describe the solution you'd like**
 A clear and concise description of what you want to happen.
