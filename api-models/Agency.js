@@ -60,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
         comment: 'XWK_22 - AGENCY SUB-TYPE 1'
       },
       agency_sub_type_2: {
-        type: DataTypes.INTEGER(03),
+        type: DataTypes.INTEGER(3),
         allowNull: false,
         comment: 'XWK_23 - AGENCY SUB-TYPE 2'
       },
