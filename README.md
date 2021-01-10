@@ -14,7 +14,7 @@ To use this project, you will need to download and install Meteor Modeler.
 Project Structure
 ---
 
-* [api-models/](api-models/) - Folder Containing Exported JavaScript API Models
-* [csv-mappings/](csv-mappings/) - Folder Containing CSV to Model Mapping Documentation
+* **[api-models/](api-models/)** - Folder Containing Exported JavaScript API Models
+* **[csv-mappings/](csv-mappings/)** - Folder Containing CSV to Model Mapping Documentation
 * [police-data-portal.dmm](police-data-portal.dmm) - Project File for Meteor Modeler
 * [schema.pdf](schema.pdf) - ORM Schema Export as PDF File

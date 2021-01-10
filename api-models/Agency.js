@@ -253,7 +253,48 @@ module.exports = (sequelize, DataTypes) => {
       engine: 'InnoDB',
       collate: 'utf8_unicode_ci',
       charset: 'utf8mb4',
-      comment: 'Agency Information about Police / Sheriff Department'
+      comment: 'Agency Information about Police / Sheriff Department',
+      indexes: [{
+          name: 'agency_type_ix',
+          fields: ['agency_type']
+        },
+        {
+          name: 'agency_sub_type_1_ix',
+          fields: ['agency_sub_type_1']
+        },
+        {
+          name: 'agency_sub_type_2_ix',
+          fields: ['agency_sub_type_2']
+        },
+        {
+          name: 'address_city_ix',
+          fields: ['address_city']
+        },
+        {
+          name: 'address_state_ix',
+          fields: ['address_state']
+        },
+        {
+          name: 'fips_county_code_ix',
+          fields: ['fips_county_code']
+        },
+        {
+          name: 'fips_place_code_ix',
+          fields: ['fips_place_code']
+        },
+        {
+          name: 'fips_state_code_ix',
+          fields: ['fips_state_code']
+        },
+        {
+          name: 'geo_county_name_ix',
+          fields: ['geo_county_name']
+        },
+        {
+          name: 'geo_state_name_ix',
+          fields: ['geo_state_name']
+        }
+      ]
     }
   );
 
