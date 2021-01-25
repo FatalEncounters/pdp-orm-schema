@@ -7,6 +7,18 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         allowNull: false
       },
+      agency_type_id: {
+        type: DataTypes.UUID,
+        allowNull: false
+      },
+      agency_sub_type_1_id: {
+        type: DataTypes.UUID,
+        allowNull: false
+      },
+      agency_sub_type_2_id: {
+        type: DataTypes.UUID,
+        allowNull: false
+      },
       ori9: {
         type: DataTypes.STRING(9),
         allowNull: false,
@@ -48,21 +60,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(50),
         allowNull: false,
         comment: 'XWK_15 - AGENCY NAME'
-      },
-      agency_type: {
-        type: DataTypes.INTEGER(1),
-        allowNull: false,
-        comment: 'XWK_21 - AGENCY TYPE'
-      },
-      agency_sub_type_1: {
-        type: DataTypes.INTEGER(3),
-        allowNull: false,
-        comment: 'XWK_22 - AGENCY SUB-TYPE 1'
-      },
-      agency_sub_type_2: {
-        type: DataTypes.INTEGER(3),
-        allowNull: false,
-        comment: 'XWK_23 - AGENCY SUB-TYPE 2'
       },
       address_name: {
         type: DataTypes.STRING(50),
@@ -255,18 +252,6 @@ module.exports = (sequelize, DataTypes) => {
       charset: 'utf8mb4',
       comment: 'Agency Information about Police / Sheriff Department',
       indexes: [{
-          name: 'agency_type_ix',
-          fields: ['agency_type']
-        },
-        {
-          name: 'agency_sub_type_1_ix',
-          fields: ['agency_sub_type_1']
-        },
-        {
-          name: 'agency_sub_type_2_ix',
-          fields: ['agency_sub_type_2']
-        },
-        {
           name: 'address_city_ix',
           fields: ['address_city']
         },
@@ -297,6 +282,30 @@ module.exports = (sequelize, DataTypes) => {
       ]
     }
   );
+
+  Agency.associate = function(models) {
+    Agency.belongsTo(models.AgencyType, {
+      foreignKey: 'agency_type_id',
+      target: 'id'
+    });
+
+    Agency.belongsTo(models.AgencySubType1, {
+      foreignKey: 'agency_sub_type_1_id',
+      target: 'id'
+    });
+
+    Agency.belongsTo(models.AgencySubType2, {
+      foreignKey: 'agency_sub_type_2_id',
+      target: 'id'
+    });
+
+    Agency.hasOne(models.Deaths, {
+      foreignKey: 'agency_id',
+      target: 'id'
+    });
+
+
+  }
 
   return Agency;
 };
