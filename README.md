@@ -3,6 +3,8 @@ Police Data Portal - ORM Schema
 
 > Create and Manage API Modules for Police Data Portal using Object Relational Mapping Schema Visual GUI.
 
+[![ORM Schema](schema.png)](schema.pdf)
+
 Requirements
 ---
 

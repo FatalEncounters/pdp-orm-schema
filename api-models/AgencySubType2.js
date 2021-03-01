@@ -1,22 +1,21 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
   const AgencySubType2 = sequelize.define(
     'AgencySubType2', {
       id: {
         type: DataTypes.UUID,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
       },
       code: {
         type: DataTypes.INTEGER,
         allowNull: false,
         unique: true,
-        defaultValue: 888
+        defaultValue: 888,
       },
       label: {
         type: DataTypes.STRING,
-        allowNull: false
-      }
+        allowNull: false,
+      },
     }, {
       timestamps: true,
       paranoid: true,
@@ -27,8 +26,8 @@ module.exports = (sequelize, DataTypes) => {
       engine: 'InnoDB',
       collate: 'utf8_unicode_ci',
       charset: 'utf8mb4',
-      comment: 'XWK_23 - AGENCY SUB-TYPE 2'
-    }
+      comment: 'XWK_23 - AGENCY SUB-TYPE 2',
+    },
   );
 
   return AgencySubType2;

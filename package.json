@@ -1,0 +1,36 @@
+{
+  "name": "pdp-orm-schema",
+  "version": "1.0.0",
+  "description": "Police Data Portal Object Relational Mapping Schema",
+  "scripts": {
+    "test": "eslint 'api-models/*.js' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FatalEncounters/pdp-orm-schema.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FatalEncounters/pdp-orm-schema/issues"
+  },
+  "homepage": "https://github.com/FatalEncounters/pdp-orm-schema#readme",
+  "lint-staged": {
+    "api-models/*.js": [
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-sequelize": "^1.0.4",
+    "husky": "^5.1.2",
+    "lint-staged": "^10.5.4"
+  }
+}
