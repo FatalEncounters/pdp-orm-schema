@@ -103,7 +103,7 @@ module.exports = (sequelize, DataTypes) => {
         comment: 'CEN_20 Dissimilarity Index, White-Hispanic',
       },
       index_info_theory_white_asian: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.FLOAT(9),
         comment: 'CEN_25 Information Theory Index, White- Asian',
       },
       index_info_theory_white_black: {
@@ -115,7 +115,7 @@ module.exports = (sequelize, DataTypes) => {
         comment: 'CEN_22 Information Theory Index-White-Hispanic',
       },
       index_isolation_white_asian: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.FLOAT(9),
         comment: 'CEN_24 Isolation Index, White-Asian',
       },
       index_isolation_white_black: {

@@ -17,13 +17,13 @@ module.exports = (sequelize, DataTypes) => {
         comment: 'FE_1-29 Indicates Record Substitutes Missing Data',
       },
       year: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER(4),
       },
       type: {
         type: DataTypes.ENUM,
         values: ['asian-deaths', 'asphyxiated-or-restrained', 'beaten-or-bludgeoned', 'black-deaths', 'burned-or-smoke-inhalation', 'chemical-agent-or-pepper-spray', 'drowned', 'drug-overdose', 'fell-from-height', 'fell-from-height-or-drowned', 'gunshot', 'hispanic-deaths', 'imputed-race', 'intentional-use-of-force', 'justifiable-homicide', 'medical-emergency', 'medical-emergency-or-overdose', 'middle-eastern-deaths', 'native-american-deaths', 'officer-involved', 'other', 'other-or-undetermined', 'stabbed', 'suicide-by-police-deaths', 'suicide-deaths', 'tasered', 'undetermined', 'unknown-race-deaths', 'vehicle', 'white-deaths'],
         defaultValue: 'undetermined',
-        comment: 'FE_1-29 & SHR_1 Type of Death',
+        comment: 'FE_1-29 Type of Death',
       },
       death_count: {
         type: DataTypes.DECIMAL,
