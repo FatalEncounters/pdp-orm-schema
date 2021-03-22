@@ -6,17 +6,23 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         allowNull: false,
       },
-      agency_type_id: {
-        type: DataTypes.UUID,
+      agency_type: {
+        type: DataTypes.ENUM,
+        values: ['local-police-department', 'sheriffs-office', 'state-law-enforcement-agency', 'special-jurisdiction', 'constable-marshal', 'federal'],
         allowNull: false,
+        comment: 'XWK_21 - AGENCY TYPE',
       },
-      agency_sub_type_1_id: {
-        type: DataTypes.UUID,
+      agency_subtype_1: {
+        type: DataTypes.ENUM,
+        values: ['public-buildings-facilities', 'natural-resources-parks-and-recreation', 'transportation-systems-facilities', 'criminal-investigations', 'special-enforcement', 'not-applicable'],
         allowNull: false,
+        comment: 'XWK_22 - AGENCY SUB-TYPE 1',
       },
-      agency_sub_type_2_id: {
-        type: DataTypes.UUID,
+      agency_subtype_2: {
+        type: DataTypes.ENUM,
+        values: ['not-applicable'],
         allowNull: false,
+        comment: 'XWK_23 - AGENCY SUB-TYPE 2',
       },
       ori9: {
         type: DataTypes.STRING(9),
@@ -25,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         comment: 'XWK_1 - Unique ORI9 of Agency',
       },
       ori9_imp: {
-        type: DataTypes.BOOLEAN(0),
+        type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: 0,
         comment: 'XWK_2 - Flag: Imputed ORI9',
@@ -284,21 +290,6 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Agency.associate = function (models) {
-    Agency.belongsTo(models.AgencyType, {
-      foreignKey: 'agency_type_id',
-      target: 'id',
-    });
-
-    Agency.belongsTo(models.AgencySubType1, {
-      foreignKey: 'agency_sub_type_1_id',
-      target: 'id',
-    });
-
-    Agency.belongsTo(models.AgencySubType2, {
-      foreignKey: 'agency_sub_type_2_id',
-      target: 'id',
-    });
-
     Agency.hasOne(models.AnnualDeaths, {
       foreignKey: 'agency_id',
       target: 'id',
@@ -325,6 +316,11 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Agency.hasOne(models.Demographics, {
+      foreignKey: 'agency_id',
+      target: 'id',
+    });
+
+    Agency.hasOne(models.FirearmLaws, {
       foreignKey: 'agency_id',
       target: 'id',
     });

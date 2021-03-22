@@ -28,9 +28,9 @@ MODEL: `Agency`
 | `XWK_18`   | Agency     | `geo_county_name`    | string(25)  | ✓        |
 | `XWK_19`   | Agency     | `urban_name`         | string(50)  |          |
 | `XWK_20`   | Agency     | `is_sub_agency`      | boolean     | ✓        |
-| `XWK_21`   | Agency     | `agency_type`        | integer(1)  | ✓        |
-| `XWK_22`   | Agency     | `agency_sub_type_1`  | integer(3)  | ✓        |
-| `XWK_23`   | Agency     | `agency_sub_type_2`  | integer(3)  | ✓        |
+| `XWK_21`   | Agency     | `agency_type`        | enum        | ✓        |
+| `XWK_22`   | Agency     | `agency_sub_type_1`  | enum        | ✓        |
+| `XWK_23`   | Agency     | `agency_sub_type_2`  | enum        | ✓        |
 | `XWK_24`   | Agency     | `government_id`      | integer(9)  | ✓        |
 | `XWK_25`   | Agency     | `census_name`        | string(50)  | ✓        |
 | `XWK_26`   | Agency     | `address_name`       | string(50)  | ✓        |
