@@ -26,9 +26,13 @@
     }
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.21.0",
-    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-sequelize": "^1.0.4",
     "husky": "^5.1.2",
     "lint-staged": "^10.5.4"

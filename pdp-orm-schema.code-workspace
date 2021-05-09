@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
+    "window.title": "Police Data Portal${separator}ORM Schema",
 		"cSpell.words": [
 			"code",
 			"csllea",
