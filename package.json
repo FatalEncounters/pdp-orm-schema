@@ -2,29 +2,33 @@
   "name": "pdp-orm-schema",
   "version": "1.0.0",
   "description": "Police Data Portal Object Relational Mapping Schema",
+  "author": "Police Data Portal",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 12.12.0",
+    "npm": ">= 6.13.4"
+  },
+  "contributors": [
+    {
+      "name": "Peter Schmalfeldt",
+      "email": "me@peterschmalfeldt.com",
+      "url": "https://peterschmalfeldt.com"
+    }
+  ],
   "scripts": {
-    "test": "eslint 'api-models/*.js' --fix"
+    "test": "eslint 'api-models/*.js' --fix",
+    "fix:type": "for i in ./api-models/*.js; do sed -i '' 's/DataTypes.INTEGER.UNSIGNED(15)/DataTypes.INTEGER(15).UNSIGNED/g' $i; done",
+    "fix:index": "for i in ./api-models/*.js; do sed -i '' \"s/method: BTREE/using: 'BTREE'/g\" $i; done",
+    "fix": "npm run -s fix:type && npm run -s fix:index && npm run -s test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FatalEncounters/pdp-orm-schema.git"
   },
-  "author": "",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/FatalEncounters/pdp-orm-schema/issues"
   },
   "homepage": "https://github.com/FatalEncounters/pdp-orm-schema#readme",
-  "lint-staged": {
-    "api-models/*.js": [
-      "eslint --fix"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.21.0",
@@ -34,7 +38,9 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-sequelize": "^1.0.4",
-    "husky": "^5.1.2",
-    "lint-staged": "^10.5.4"
-  }
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "fix"
+  ]
 }
